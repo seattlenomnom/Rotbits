@@ -32,7 +32,7 @@
 /* includes */
 
 #include <stdio.h>
-
+#include <stdlib.h>
 
 
 
@@ -69,18 +69,31 @@
 
 int main(int argc, char *argv[]){
 
+    unsigned int theInt, numBits;
 
+    theInt = 0;
+    numBits = 0;
+    char control;
 
+    control = 'y';
 
 
 
     /* input number and shift size(in bits) */
 
-    printf("input a number 0-255: \n");
+    while(control != 'n'){
+        printf("enter a number in hex: ");
+        scanf("%x", &theInt);
+        printf("\n");
+        printf("enter the number of bit to shift: ");
+        scanf("%i", &numBits);
+        printf("\n");
+        printf("%x right shift\n", theInt >> numBits);
+        printf("continue (y/n)");
+        scanf("%c", &control);
+    }
 
-
-
-
+    printf("\n");
 
 
 
